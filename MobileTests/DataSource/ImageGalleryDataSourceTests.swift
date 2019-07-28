@@ -1,15 +1,14 @@
 //
-//  MobileTests.swift
+//  ImageGalleryDataSourceTests.swift
 //  MobileTests
 //
-//  Created by Shady Ghalab on 16.07.19.
+//  Created by Shady Mustafa on 18.07.19.
 //  Copyright © 2019 Ebay. All rights reserved.
 //
 
 import XCTest
-@testable import Mobile
 
-class MobileTests: XCTestCase {
+class ImageGalleryDataSourceTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
