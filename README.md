@@ -6,11 +6,6 @@ Xcode Version 10.2.1 (10E1001)
 
 See "mobile.de-Assignmen.pdf" file for more information.
 
-## Setup  ## 
-
-1. Download the project from Google Drive.
-2. Run!
-
  ### Dev Setup 
 -  You won't need this because i will upload the project with the Dependencies but just in case you got any issues with carthage please run that command.
 ```
