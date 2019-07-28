@@ -12,7 +12,7 @@ import UIKit
 
 @testable import Mobile
 
-class GalleryImageProviderMock: GalleryImageProvider {
+class ImageGalleryProviderMock: ImageGalleryProvider {
     private var shouldError: Bool = false
     
     init(shouldError: Bool = false) {

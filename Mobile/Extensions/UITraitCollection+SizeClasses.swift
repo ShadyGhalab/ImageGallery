@@ -6,4 +6,10 @@
 //  Copyright © 2019 Ebay. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+public extension UITraitCollection {
+    var sizeClasses: (horizontal: UIUserInterfaceSizeClass, vertical: UIUserInterfaceSizeClass) {
+        return (horizontal: horizontalSizeClass, vertical: verticalSizeClass)
+    }
+}

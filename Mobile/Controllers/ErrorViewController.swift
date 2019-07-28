@@ -8,23 +8,25 @@
 
 import UIKit
 
-class ErrorViewController: UIViewController {
+final class ErrorViewController: UIViewController, StoryboardMakeable {
+    
+    static var storyboardName: String = "Loading"
+    typealias StoryboardMakeableType = ErrorViewController
+    
+    let viewModel: ErrorViewProtocol = ErrorViewModel()
+    
+    @IBOutlet private weak var errorLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+     
+        bindViewModel()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func bindViewModel() {
+        viewModel.outputs.errorMessage
+            .observeValues { [unowned self] errorMessage in
+                self.errorLabel.text = errorMessage
+        }
     }
-    */
-
 }

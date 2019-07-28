@@ -6,4 +6,9 @@
 //  Copyright © 2019 Ebay. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+struct ImageGalleryItem {
+    let image: UIImage
+    let uri: String
+}

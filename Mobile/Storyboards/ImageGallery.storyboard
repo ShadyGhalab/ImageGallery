@@ -13,7 +13,7 @@
         <!--Image Gallery View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ImageGalleryViewController" customModule="Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImageGalleryViewController" id="BYZ-38-t0r" customClass="ImageGalleryViewController" customModule="Mobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,7 +76,7 @@
         <!--Image Gallery Details View Controller-->
         <scene sceneID="Fmp-ad-G6E">
             <objects>
-                <viewController id="Xcs-oQ-qOI" customClass="ImageGalleryDetailsViewController" customModule="Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImageGalleryDetailsViewController" id="Xcs-oQ-qOI" customClass="ImageGalleryDetailsViewController" customModule="Mobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="af4-rV-wsT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -107,7 +107,7 @@
         <!--Navigation Controller-->
         <scene sceneID="RUU-G1-T01">
             <objects>
-                <navigationController storyboardIdentifier="ImageGalleryViewController" automaticallyAdjustsScrollViewInsets="NO" id="jD8-cU-BX9" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ImageGalleryNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" id="jD8-cU-BX9" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="Sly-Ov-w7U">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

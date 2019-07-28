@@ -2,7 +2,7 @@
 //  ImageProvider.swift
 //  Mobile
 //
-//  Created by Shady Ghalab on 16.07.19.
+//  Created by Shady Mustafa on 16.07.19.
 //  Copyright © 2019 Ebay. All rights reserved.
 //
 
@@ -10,25 +10,32 @@ import Foundation
 import ReactiveSwift
 import UIKit
 
-public protocol ImageProvider {
-    func fetchImage(forUrl url: URL?) -> SignalProducer<UIImage, FetchError>
-    func fetchImages(forUrls urls: [String]) -> SignalProducer<[UIImage], FetchError>
+enum ImageType {
+    case thumbnail
+    case largeImage
 }
 
-extension ImageProvider {
-    
-    func fetchImage(forUrl url: URL?) -> SignalProducer<UIImage, FetchError> {
+public protocol ImageProvider {
+    func fetchImage(forUrl url: URL?) -> SignalProducer<(UIImage, String), FetchError>
+    func fetchImages(forUrls urls: [String]) -> SignalProducer<[(UIImage, String)], FetchError>
+}
+
+class ImageGalleryProvider: ImageProvider {
+
+    private let urlSession = URLSession(configuration: .default)
+
+    func fetchImage(forUrl url: URL?) -> SignalProducer<(UIImage, String), FetchError> {
         guard let url = url else { return .empty }
         
-        return  SignalProducer<UIImage, FetchError> { observer, _ in
-            
-            URLSession.shared.dataTask(with: url) { data, response, error in
+        return  SignalProducer<(UIImage, String), FetchError> { observer, _ in
+
+            self.urlSession.dataTask(with: url) { data, response, error in
                 if let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
                     let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
                     let data = data, error == nil,
                     let image = UIImage(data: data) {
                     
-                    observer.send(value: image)
+                    observer.send(value: (image, url.absoluteString))
                     observer.sendCompleted()
                 } else {
                     observer.send(error: .noContentReturned)
@@ -38,12 +45,51 @@ extension ImageProvider {
         }
     }
     
-    func fetchImages(forUrls urls: [String]) -> SignalProducer<[UIImage], FetchError> {
+    func fetchImages(forUrls urls: [String]) -> SignalProducer<[(UIImage, String)], FetchError> {
         let producers = urls.map { fetchImage(forUrl: URL(string: $0)) }
         
         return SignalProducer(producers)
             .flatten(.merge)
             .collect()
-            .observe(on: UIScheduler())
+    }
+}
+
+extension ImageProvider {
+    func fetchImageGalleryItems(forUris uris: [String], imageType: ImageType) -> SignalProducer<[ImageGalleryItem], FetchError> {
+       let imageUrlBuilder = ImageURlBuilder(with: imageType)
+       let urls = imageUrlBuilder.buildValidUrls(forUris: uris)
+        
+        return fetchImages(forUrls: urls)
+            .flatten()
+            .map { ImageGalleryItem(image: $0.0, uri: $0.1) }
+            .collect()
+    }
+    
+    func fetchImageGalleryItem(forUri uri: String, imageType: ImageType) -> SignalProducer<ImageGalleryItem, FetchError> {
+        let imageUrlBuilder = ImageURlBuilder(with: imageType)
+        let urlString = imageUrlBuilder.buildValidUrl(forUri: uri)
+        let url = URL(string: urlString)
+        
+        return fetchImage(forUrl: url)
+            .map { ImageGalleryItem(image: $0.0, uri: $0.1) }
+    }
+}
+
+fileprivate struct ImageURlBuilder {
+    private let imageType: ImageType
+    init(with imageType: ImageType) {
+        self.imageType = imageType
+    }
+    
+    func buildValidUrls(forUris uris: [String] ) -> [String] {
+        return uris.map { formatUrl(forUri: $0) }
+    }
+    
+    func buildValidUrl(forUri uri: String ) -> String {
+        return formatUrl(forUri: uri)
+    }
+    
+    private func formatUrl(forUri uri: String ) -> String {
+        return imageType == .thumbnail ? "https://\(uri)_2.jpg" : "https://\(uri)_27.jpg"
     }
 }

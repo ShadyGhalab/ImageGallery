@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+struct MediaGallery: Codable {
+    let slideShow: Bool
+    let additionalAds: Bool
+}

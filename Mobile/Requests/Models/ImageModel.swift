@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+struct ImageModel: Codable, Equatable {
+    let uri: String
+    let set: String
+}

@@ -12,30 +12,29 @@ import XCTest
 
 class ImageGalleryCellViewModelTests: XCTestCase {
 
-    let viewModel: ImageGalleryCellViewProtocol = ImageGalleryCellViewModel()
-    let image: TestObserver<UIImage, Never> = TestObserver()
+    private let viewModel: ImageGalleryCellViewProtocol = ImageGalleryCellViewModel()
+    private let image: TestObserver<UIImage, Never> = TestObserver()
     
     override func setUp() {
         viewModel.outputs.image.observe(image.observer)
     }
 
-    func testConfigureViewModelWithImage() {
-        let imageProvider: ImageProvider = GalleryImageProviderMock()
+    func testConfigureViewModelWithThumbnailImage() {
+        let imageProvider: ImageProvider = ImageGalleryProviderMock()
 
-        let imageModel = ImageModel(uri: "i.ebayimg.com/00/s/MTA2NlgxNjAw/z/TaoAAOSwjkdZ57Jm/$", set: "fe4cfedffdffffffff")
+        let imageModel = ImageModel.make(uri: "i.ebayimg.com/00/s/MTA2NlgxNjAw/z/TaoAAOSwjkdZ57Jm/$")
         let thumbnailImage = UIImage(named: "placeholder_2")!
         viewModel.inputs.configure(with: imageProvider, imageModel: imageModel)
         
         image.assertValue(thumbnailImage)
     }
 
-    func testConfigureViewModelWithFailedDownloadedImage() {
-        let imageProvider: ImageProvider = GalleryImageProviderMock(errorEnabled: true)
+    func testConfigureViewModelWithFailedDownloadedThumbnailImage() {
+        let imageProvider: ImageProvider = ImageGalleryProviderMock(shouldError: true)
 
-        let imageModel = ImageModel(uri: "i.ebayimg.com/00/s/MTA2NlgxNjAw/z/TaoAAOSwjkdZ57Jm/$", set: "fe4cfedffdffffffff")
+        let imageModel = ImageModel.make(uri: "i.ebayimg.com/00/s/MTA2NlgxNjAw/z/TaoAAOSwjkdZ57Jm/$")
         viewModel.inputs.configure(with: imageProvider, imageModel: imageModel)
        
         image.assertValueCount(0)
-        XCTAssertNil(image.lastValue)
     }
 }

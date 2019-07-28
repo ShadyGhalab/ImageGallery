@@ -1,5 +1,5 @@
 //
-//  GalleryDetailsViewController.swift
+//  ImageGalleryDetailsViewController.swift
 //  Mobile
 //
 //  Created by Shady Mustafa on 16.07.19.
@@ -7,24 +7,26 @@
 //
 
 import UIKit
+import ReactiveSwift
+import ReactiveCocoa
 
-class GalleryDetailsViewController: UIViewController {
-
+final class ImageGalleryDetailsViewController: UIViewController, StoryboardMakeable {
+  
+    static var storyboardName: String = "ImageGallery"
+    typealias StoryboardMakeableType = ImageGalleryDetailsViewController
+    
+    @IBOutlet private weak var imageView: UIImageView!
+    let viewModel: ImageGalleryDetailsViewProtocol = ImageGalleryDetailsViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        bindViewModel()
+       
+        viewModel.inputs.viewDidLoad()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func bindViewModel() {
+        imageView.reactive.image <~ viewModel.outputs.image
     }
-    */
-
 }

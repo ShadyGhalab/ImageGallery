@@ -7,7 +7,27 @@
 //
 
 import UIKit
+import ReactiveSwift
+import ReactiveCocoa
 
-class ImageGalleryCollectionViewCell: UICollectionViewCell {
+final class ImageGalleryCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var imageView: UIImageView!
+
+    let viewModel: ImageGalleryCellViewProtocol = ImageGalleryCellViewModel()
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        bindViewModel()
+    }
+    
+    func bindViewModel() {
+        imageView.reactive.image <~ viewModel.outputs.image
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        imageView.image = nil
+    }
 }

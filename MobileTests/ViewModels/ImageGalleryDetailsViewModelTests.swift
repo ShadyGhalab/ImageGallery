@@ -8,26 +8,33 @@
 
 import XCTest
 
+@testable import Mobile
+
 class ImageGalleryDetailsViewModelTests: XCTestCase {
 
+    private let viewModel: ImageGalleryDetailsViewProtocol = ImageGalleryDetailsViewModel()
+    private let image: TestObserver<UIImage, Never> = TestObserver()
+
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        viewModel.outputs.image.observe(image.observer)
     }
+    
+    func testConfigureViewModelWithLargeImage() {
+        let imageProvider = ImageGalleryProviderMock()
+        let largeImage = UIImage(named: "placeholder_27")!
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        viewModel.inputs.configure(with: imageProvider, withUri: "uri1")
+        viewModel.inputs.viewDidLoad()
+        
+        image.assertValue(largeImage)
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testConfigureViewModelWithFailedDownloadedLargeImage() {
+        let imageProvider = ImageGalleryProviderMock(shouldError: true)
+        
+        viewModel.inputs.configure(with: imageProvider, withUri: "uri1")
+        viewModel.inputs.viewDidLoad()
+        
+        image.assertValueCount(0)
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
