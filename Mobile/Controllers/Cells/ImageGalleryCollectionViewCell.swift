@@ -22,7 +22,11 @@ final class ImageGalleryCollectionViewCell: UICollectionViewCell {
     }
     
     func bindViewModel() {
-        imageView.reactive.image <~ viewModel.outputs.image
+      viewModel.outputs.image
+        .observe(on: UIScheduler())
+        .observeValues({ [unowned self] image in
+            self.imageView.image = image
+        })
     }
     
     override func prepareForReuse() {
