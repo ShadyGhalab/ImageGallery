@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3055FA172351E54500D35B7D /* ReactiveSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3055FA162351E54500D35B7D /* ReactiveSwift */; };
 		306E7CCE22DDEC3F005CFC38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306E7CCD22DDEC3F005CFC38 /* AppDelegate.swift */; };
 		306E7CD522DDEC41005CFC38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 306E7CD422DDEC41005CFC38 /* Assets.xcassets */; };
 		306E7CD822DDEC41005CFC38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 306E7CD622DDEC41005CFC38 /* LaunchScreen.storyboard */; };
@@ -176,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3075B1DE22DDF5E400BCAD5B /* ReactiveCocoa.framework in Frameworks */,
+				3055FA172351E54500D35B7D /* ReactiveSwift in Frameworks */,
 				3075B1DF22DDF5E400BCAD5B /* ReactiveSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,6 +455,9 @@
 			dependencies = (
 			);
 			name = Mobile;
+			packageProductDependencies = (
+				3055FA162351E54500D35B7D /* ReactiveSwift */,
+			);
 			productName = Mobile;
 			productReference = 306E7CCA22DDEC3F005CFC38 /* Mobile.app */;
 			productType = "com.apple.product-type.application";
@@ -504,6 +509,9 @@
 				Base,
 			);
 			mainGroup = 306E7CC122DDEC3F005CFC38;
+			packageReferences = (
+				3055FA152351E54500D35B7D /* XCRemoteSwiftPackageReference "ReactiveSwift" */,
+			);
 			productRefGroup = 306E7CCB22DDEC3F005CFC38 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -892,6 +900,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3055FA152351E54500D35B7D /* XCRemoteSwiftPackageReference "ReactiveSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveCocoa/ReactiveSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3055FA162351E54500D35B7D /* ReactiveSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3055FA152351E54500D35B7D /* XCRemoteSwiftPackageReference "ReactiveSwift" */;
+			productName = ReactiveSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 306E7CC222DDEC3F005CFC38 /* Project object */;
 }
