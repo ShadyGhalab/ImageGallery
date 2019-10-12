@@ -11,10 +11,11 @@ import XCTest
 @testable import ImageGallery
 
 class ImageGalleryCellViewModelTests: XCTestCase {
-
-    private let viewModel: ImageGalleryCellViewProtocol = ImageGalleryCellViewModel()
-    private let image: TestObserver<UIImage, Never> = TestObserver()
+    private let placeholderImage = UIColor.black.image()
+    private lazy var viewModel: ImageGalleryCellViewProtocol = ImageGalleryCellViewModel(imagePlaceholder: placeholderImage)
     
+    private let image: TestObserver<UIImage, Never> = TestObserver()
+   
     override func setUp() {
         viewModel.outputs.image.observe(image.observer)
     }
@@ -35,6 +36,6 @@ class ImageGalleryCellViewModelTests: XCTestCase {
         let imageModel = ImageModel.make(uri: "i.BabylonHealthimg.com/00/s/MTA2NlgxNjAw/z/TaoAAOSwjkdZ57Jm/$")
         viewModel.inputs.configure(with: imageProvider, imageModel: imageModel)
        
-        image.assertValueCount(0)
+        image.assertValue(placeholderImage)
     }
 }

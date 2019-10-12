@@ -27,16 +27,14 @@ struct ImageGalleryCellViewModel: ImageGalleryCellViewInputs, ImageGalleryCellVi
     var inputs: ImageGalleryCellViewInputs { return self }
     var outputs: ImageGalleryCellViewOutputs { return self }
     
-    init() {
+    init(imagePlaceholder: UIImage = UIColor.white.image()) {
         
         image = imageModelProperty.signal.skipNil()
             .combineLatest(with: imageProviderProperty.signal.skipNil())
             .flatMap(.latest, { imageModel, imageProvider -> SignalProducer<ImageGalleryItem, FetchError> in
                 imageProvider.fetchImageGalleryItem(forUri: imageModel.uri, imageType: .thumbnail)
             })
-            .map { Optional($0) }
-            .flatMapError { _ in SignalProducer(value: nil) }
-            .skipNil()
+            .flatMapError { _ in SignalProducer(value: ImageGalleryItem(image: imagePlaceholder, uri: "Placeholder")) }
             .map({ $0.image })
     }
     
@@ -48,4 +46,13 @@ struct ImageGalleryCellViewModel: ImageGalleryCellViewInputs, ImageGalleryCellVi
     }
     
     let image: Signal<UIImage, Never>
+}
+
+extension UIColor {
+    func image(_ size: CGSize = CGSize(width: 1, height: 1)) -> UIImage {
+        return UIGraphicsImageRenderer(size: size).image { rendererContext in
+            self.setFill()
+            rendererContext.fill(CGRect(origin: .zero, size: size))
+        }
+    }
 }
