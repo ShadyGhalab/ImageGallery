@@ -8,7 +8,7 @@ Xcode Version 11.1 (11A1027)
 
 The application shall have two screens:
 
-- The first screen must have one view with thumbnails of all available photos for the
+- The first screen has one view with thumbnails of all available photos for the
 car.
 - When the user taps on one of the thumbnails, a second screen must load to show
 the bigger photo in the middle of the screen.
