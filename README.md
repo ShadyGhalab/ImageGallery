@@ -4,8 +4,6 @@ Xcode Version 10.2.1 (10E1001)
 
 # Project - Coding Challenge  #
 
-See "mobile.de-Assignmen.pdf" file for more information.
-
  ### Dev Setup 
 -  You won't need this because i will upload the project with the Dependencies but just in case you got any issues with carthage please run that command.
 ```
