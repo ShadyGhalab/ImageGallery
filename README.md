@@ -17,12 +17,16 @@ the bigger photo in the middle of the screen.
  This project uses Carthage and Swift Package Manager to manage the dependencies.
 
 - Please run this command to update ReactiveCocoa and Snapshot dependencies. (These dependencies don't support Swift Package Manager yet)
-
-```
- - carthage update --platform iOS
-```
-
 - ReactiveSwift will be updated automatically once you open the project via Swift Package Manager.
+
+```
+ - Install Swiftlint using: brew install swiftlint
+ - git clone https://github.com/ShadyGhalab/ImageGallery.git
+ - carthage update --platform iOS
+ - Wait for Swift Package Manager to update its dependencies
+ - Run! 😎
+```
+
 
 ## Dev Notes ## 
 
