@@ -2,7 +2,7 @@
 
 Xcode Version 10.2.1 (10E1001)
 
-# Project Mobile.de - Coding Challenge  #
+# Project - Coding Challenge  #
 
 See "mobile.de-Assignmen.pdf" file for more information.
 
