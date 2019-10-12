@@ -11,8 +11,8 @@ import XCTest
 @testable import ImageGallery
 
 class ImageGalleryDetailsViewModelTests: XCTestCase {
-
-    private let viewModel: ImageGalleryDetailsViewProtocol = ImageGalleryDetailsViewModel()
+    private let placeholderImage = UIColor.black.image()
+    private lazy var viewModel: ImageGalleryDetailsViewProtocol = ImageGalleryDetailsViewModel(imagePlaceholder: placeholderImage)
     private let image: TestObserver<UIImage, Never> = TestObserver()
 
     override func setUp() {
@@ -35,6 +35,6 @@ class ImageGalleryDetailsViewModelTests: XCTestCase {
         viewModel.inputs.configure(with: imageProvider, withUri: "uri1")
         viewModel.inputs.viewDidLoad()
         
-        image.assertValueCount(0)
+        image.assertValue(placeholderImage)
     }
 }

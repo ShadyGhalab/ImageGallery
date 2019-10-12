@@ -28,7 +28,7 @@ struct ImageGalleryDetailsViewModel: ImageGalleryDetailsViewInputs, ImageGallery
     var inputs: ImageGalleryDetailsViewInputs { return self }
     var outputs: ImageGalleryDetailsViewOutputs { return self }
     
-    init() {
+    init(imagePlaceholder: UIImage = UIColor.white.image()) {
         
         let imageModelsWithUri = imageProviderProperty.signal
             .skipNil()
@@ -39,11 +39,8 @@ struct ImageGalleryDetailsViewModel: ImageGalleryDetailsViewInputs, ImageGallery
             .map { $0.1 }
             .flatMap(.latest, { imageProvider, uri -> SignalProducer<ImageGalleryItem, FetchError> in
                  imageProvider.fetchImageGalleryItem(forUri: uri, imageType: .largeImage)
-            })
-            .map { Optional($0) }
-            .flatMapError { _ in SignalProducer(value: nil) }
-            .skipNil()
-            .map { $0.image }
+            }).flatMapError { _ in SignalProducer(value: ImageGalleryItem(image: imagePlaceholder, uri: "Placeholder")) }
+            .map({ $0.image })
     }
     
     private let imageProviderProperty = MutableProperty<ImageProvider?>(nil)
