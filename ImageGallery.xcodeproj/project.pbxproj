@@ -199,8 +199,8 @@
 			children = (
 				D5755ABC22E1EB8E00E0EEA4 /* README.md */,
 				D5755ABE22E1EC2F00E0EEA4 /* mobile.de-Assignmen.pdf */,
-				306E7CCC22DDEC3F005CFC38 /* Mobile */,
-				306E7CE122DDEC41005CFC38 /* MobileTests */,
+				306E7CCC22DDEC3F005CFC38 /* ImageGallery */,
+				306E7CE122DDEC41005CFC38 /* ImageGalleryTests */,
 				306E7CCB22DDEC3F005CFC38 /* Products */,
 				3075B1CD22DDF4F100BCAD5B /* Frameworks */,
 			);
@@ -215,7 +215,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		306E7CCC22DDEC3F005CFC38 /* Mobile */ = {
+		306E7CCC22DDEC3F005CFC38 /* ImageGallery */ = {
 			isa = PBXGroup;
 			children = (
 				3075B1E622DDF70800BCAD5B /* Controllers */,
@@ -233,10 +233,10 @@
 				306E7CD622DDEC41005CFC38 /* LaunchScreen.storyboard */,
 				306E7CD922DDEC41005CFC38 /* Info.plist */,
 			);
-			path = Mobile;
+			path = ImageGallery;
 			sourceTree = "<group>";
 		};
-		306E7CE122DDEC41005CFC38 /* MobileTests */ = {
+		306E7CE122DDEC41005CFC38 /* ImageGalleryTests */ = {
 			isa = PBXGroup;
 			children = (
 				D5755AAF22E0E1E100E0EEA4 /* Snapshots */,
@@ -246,7 +246,7 @@
 				D5755A9A22E08FF200E0EEA4 /* Helpers */,
 				306E7CE422DDEC41005CFC38 /* Info.plist */,
 			);
-			path = MobileTests;
+			path = ImageGalleryTests;
 			sourceTree = "<group>";
 		};
 		3075B1CD22DDF4F100BCAD5B /* Frameworks */ = {
@@ -787,7 +787,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = Mobile/Info.plist;
+				INFOPLIST_FILE = ImageGallery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -809,7 +809,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = Mobile/Info.plist;
+				INFOPLIST_FILE = ImageGallery/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -831,7 +831,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = MobileTests/Info.plist;
+				INFOPLIST_FILE = ImageGalleryTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -855,7 +855,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = MobileTests/Info.plist;
+				INFOPLIST_FILE = ImageGalleryTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

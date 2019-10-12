@@ -74,7 +74,7 @@ excluded: # paths to ignore during linting. overridden by `included`.
   - DerivedData
   - Pods
   - Submodules
-  - MobileTests
+  - ImageGalleryTests
   - .git
  
 

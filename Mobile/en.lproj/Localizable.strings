@@ -1,9 +1,0 @@
-/* 
-  Localizable.strings
-  Mobile
-
-  Created by Shady Mustafa on 18.07.19.
-  Copyright © 2019 Babylon Health. All rights reserved.
-*/
-
-"mobile.loading.error" = "Something went wrong.\nPlease try again later.";
