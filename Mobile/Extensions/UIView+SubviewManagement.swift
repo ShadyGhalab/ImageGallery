@@ -3,7 +3,7 @@
 //  Mobile
 //
 //  Created by Shady Mustafa on 17.07.19.
-//  Copyright © 2019 Ebay. All rights reserved.
+//  Copyright © 2019 Babylon Health. All rights reserved.
 //
 
 import UIKit

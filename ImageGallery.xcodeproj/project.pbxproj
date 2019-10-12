@@ -108,11 +108,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		306E7CCA22DDEC3F005CFC38 /* Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		306E7CCA22DDEC3F005CFC38 /* ImageGallery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageGallery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		306E7CCD22DDEC3F005CFC38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		306E7CD422DDEC41005CFC38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		306E7CD922DDEC41005CFC38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		306E7CDE22DDEC41005CFC38 /* MobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		306E7CDE22DDEC41005CFC38 /* ImageGalleryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageGalleryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		306E7CE422DDEC41005CFC38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3075B1DC22DDF5E400BCAD5B /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		3075B1DD22DDF5E400BCAD5B /* ReactiveSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveSwift.framework; path = Carthage/Build/iOS/ReactiveSwift.framework; sourceTree = "<group>"; };
@@ -209,8 +209,8 @@
 		306E7CCB22DDEC3F005CFC38 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				306E7CCA22DDEC3F005CFC38 /* Mobile.app */,
-				306E7CDE22DDEC41005CFC38 /* MobileTests.xctest */,
+				306E7CCA22DDEC3F005CFC38 /* ImageGallery.app */,
+				306E7CDE22DDEC41005CFC38 /* ImageGalleryTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -440,9 +440,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		306E7CC922DDEC3F005CFC38 /* Mobile */ = {
+		306E7CC922DDEC3F005CFC38 /* ImageGallery */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 306E7CE722DDEC41005CFC38 /* Build configuration list for PBXNativeTarget "Mobile" */;
+			buildConfigurationList = 306E7CE722DDEC41005CFC38 /* Build configuration list for PBXNativeTarget "ImageGallery" */;
 			buildPhases = (
 				306E7CC622DDEC3F005CFC38 /* Sources */,
 				306E7CC722DDEC3F005CFC38 /* Frameworks */,
@@ -454,17 +454,17 @@
 			);
 			dependencies = (
 			);
-			name = Mobile;
+			name = ImageGallery;
 			packageProductDependencies = (
 				3055FA162351E54500D35B7D /* ReactiveSwift */,
 			);
 			productName = Mobile;
-			productReference = 306E7CCA22DDEC3F005CFC38 /* Mobile.app */;
+			productReference = 306E7CCA22DDEC3F005CFC38 /* ImageGallery.app */;
 			productType = "com.apple.product-type.application";
 		};
-		306E7CDD22DDEC41005CFC38 /* MobileTests */ = {
+		306E7CDD22DDEC41005CFC38 /* ImageGalleryTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 306E7CEA22DDEC41005CFC38 /* Build configuration list for PBXNativeTarget "MobileTests" */;
+			buildConfigurationList = 306E7CEA22DDEC41005CFC38 /* Build configuration list for PBXNativeTarget "ImageGalleryTests" */;
 			buildPhases = (
 				306E7CDA22DDEC41005CFC38 /* Sources */,
 				306E7CDB22DDEC41005CFC38 /* Frameworks */,
@@ -476,9 +476,9 @@
 			dependencies = (
 				306E7CE022DDEC41005CFC38 /* PBXTargetDependency */,
 			);
-			name = MobileTests;
+			name = ImageGalleryTests;
 			productName = MobileTests;
-			productReference = 306E7CDE22DDEC41005CFC38 /* MobileTests.xctest */;
+			productReference = 306E7CDE22DDEC41005CFC38 /* ImageGalleryTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -500,7 +500,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 306E7CC522DDEC3F005CFC38 /* Build configuration list for PBXProject "Mobile" */;
+			buildConfigurationList = 306E7CC522DDEC3F005CFC38 /* Build configuration list for PBXProject "ImageGallery" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -516,8 +516,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				306E7CC922DDEC3F005CFC38 /* Mobile */,
-				306E7CDD22DDEC41005CFC38 /* MobileTests */,
+				306E7CC922DDEC3F005CFC38 /* ImageGallery */,
+				306E7CDD22DDEC41005CFC38 /* ImageGalleryTests */,
 			);
 		};
 /* End PBXProject section */
@@ -634,7 +634,7 @@
 /* Begin PBXTargetDependency section */
 		306E7CE022DDEC41005CFC38 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 306E7CC922DDEC3F005CFC38 /* Mobile */;
+			target = 306E7CC922DDEC3F005CFC38 /* ImageGallery */;
 			targetProxy = 306E7CDF22DDEC41005CFC38 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -792,7 +792,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Ebay.Mobile;
+				PRODUCT_BUNDLE_IDENTIFIER = BabylonHealth.ImageGallery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -814,7 +814,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Ebay.Mobile;
+				PRODUCT_BUNDLE_IDENTIFIER = BabylonHealth.ImageGallery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -837,11 +837,11 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Ebay.MobileTests;
+				PRODUCT_BUNDLE_IDENTIFIER = BabylonHealth.ImageGalleryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mobile.app/Mobile";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImageGallery.app/ImageGallery";
 			};
 			name = Debug;
 		};
@@ -861,18 +861,18 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Ebay.MobileTests;
+				PRODUCT_BUNDLE_IDENTIFIER = BabylonHealth.ImageGalleryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mobile.app/Mobile";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImageGallery.app/ImageGallery";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		306E7CC522DDEC3F005CFC38 /* Build configuration list for PBXProject "Mobile" */ = {
+		306E7CC522DDEC3F005CFC38 /* Build configuration list for PBXProject "ImageGallery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				306E7CE522DDEC41005CFC38 /* Debug */,
@@ -881,7 +881,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		306E7CE722DDEC41005CFC38 /* Build configuration list for PBXNativeTarget "Mobile" */ = {
+		306E7CE722DDEC41005CFC38 /* Build configuration list for PBXNativeTarget "ImageGallery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				306E7CE822DDEC41005CFC38 /* Debug */,
@@ -890,7 +890,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		306E7CEA22DDEC41005CFC38 /* Build configuration list for PBXNativeTarget "MobileTests" */ = {
+		306E7CEA22DDEC41005CFC38 /* Build configuration list for PBXNativeTarget "ImageGalleryTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				306E7CEB22DDEC41005CFC38 /* Debug */,

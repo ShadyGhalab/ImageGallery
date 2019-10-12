@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1020"
+   LastUpgradeVersion = "1110"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -17,14 +17,12 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "306E7CDD22DDEC41005CFC38"
-               BuildableName = "MobileTests.xctest"
-               BlueprintName = "MobileTests"
-               ReferencedContainer = "container:Mobile.xcodeproj">
+               BuildableName = "ImageGalleryTests.xctest"
+               BlueprintName = "ImageGalleryTests"
+               ReferencedContainer = "container:ImageGallery.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -36,8 +34,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

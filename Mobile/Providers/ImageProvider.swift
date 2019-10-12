@@ -3,7 +3,7 @@
 //  Mobile
 //
 //  Created by Shady Mustafa on 16.07.19.
-//  Copyright © 2019 Ebay. All rights reserved.
+//  Copyright © 2019 Babylon Health. All rights reserved.
 //
 
 import Foundation
@@ -69,7 +69,10 @@ extension ImageProvider {
         let imageUrlBuilder = ImageURlBuilder(with: imageType)
         let urlString = imageUrlBuilder.buildValidUrl(forUri: uri)
         let url = URL(string: urlString)
-        
+        print(url)
+        print(url?.path)
+        print(urlString)
+
         return fetchImage(forUrl: url)
             .map { ImageGalleryItem(image: $0.0, uri: $0.1) }
     }
