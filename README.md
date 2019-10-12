@@ -32,8 +32,10 @@ This project uses the MVVM software architectural pattern.
 
 
 ### Dependencies
-[ReactiveCocoa Page](https://github.com/ReactiveCocoa/ReactiveCocoa)
-[ReactiveSwift Page](https://github.com/ReactiveCocoa/ReactiveSwift)
+- [ReactiveCocoa Page](https://github.com/ReactiveCocoa/ReactiveCocoa)
+- [ReactiveSwift Page](https://github.com/ReactiveCocoa/ReactiveSwift)
+- [FBSnapshotTestCase Page](https://github.com/uber/ios-snapshot-test-case)
+
 
 ### Localization
 - The project is configured for localization with English language.
