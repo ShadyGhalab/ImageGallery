@@ -4,13 +4,25 @@ Xcode Version 10.2.1 (10E1001)
 
 # Project - Coding Challenge  #
 
+ Image gallery app that will access  API endpoint to fetch all available photos and show them to the user.
+
+The application shall have two screens:
+
+- The first screen must have one view with thumbnails of all available photos for the
+car.
+- When the user taps on one of the thumbnails, a second screen must load to show
+the bigger photo in the middle of the screen.
+
  ### Dev Setup 
--  You won't need this because i will upload the project with the Dependencies but just in case you got any issues with carthage please run that command.
+ This project uses Carthage and Swift Package Manager to manage the dependencies.
+
+- Please run this command to update ReactiveCocoa and Snapshot dependencies. (These dependencies don't support Swift Package Manager yet)
+
 ```
  - carthage update --platform iOS
 ```
-- I deleted the DerivedData as well before zipping it so you won't need to delete it and it has a relative location to the project.
 
+- ReactiveSwift will be updated automatically once you open the project via Swift Package Manager.
 
 ## Dev Notes ## 
 
@@ -22,17 +34,6 @@ This project uses the MVVM software architectural pattern.
 ### Dependencies
 [ReactiveCocoa Page](https://github.com/ReactiveCocoa/ReactiveCocoa)
 [ReactiveSwift Page](https://github.com/ReactiveCocoa/ReactiveSwift)
-
-- Dependencies are provided by Carthage. Why Carthage over CocoaPods? Because of: ( I would have used  Swift Package manager with the new Xcode but it's still beta 🤷‍♂)
-    - Carthage does not have Xcode workspace.
-    - Carthage builds framework binaries using xcodebuild.
-    - Carthage has been created as a decentralized dependency manager.
-
-- Why am i using ReactiveCocoa and ReactiveSwift?
-    -  UI Binding.
-    - Multithreading is simplified
-    - Cleaner Code and Architectures.
-
 
 ### Localization
 - The project is configured for localization with English language.
