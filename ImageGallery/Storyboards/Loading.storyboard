@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DM7-ng-LhU">
-    <device id="retina5_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DM7-ng-LhU">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,17 +11,17 @@
         <!--Loading View Controller-->
         <scene sceneID="Kdm-ad-VTO">
             <objects>
-                <viewController storyboardIdentifier="LoadingViewController" id="DM7-ng-LhU" customClass="LoadingViewController" customModule="Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoadingViewController" id="DM7-ng-LhU" customClass="LoadingViewController" customModule="ImageGallery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iF1-Ep-w2R">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="cwF-ZS-luK">
-                                <rect key="frame" x="197" y="368" width="20" height="20"/>
+                                <rect key="frame" x="197" y="358" width="20" height="20"/>
                                 <color key="tintColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zpf-Bo-lYA">
-                                <rect key="frame" x="0.0" y="406" width="414" height="330"/>
+                                <rect key="frame" x="0.0" y="396" width="414" height="340"/>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -40,7 +38,7 @@
                     <connections>
                         <outlet property="errorContainer" destination="Zpf-Bo-lYA" id="TYh-RA-Y1u"/>
                         <outlet property="loadingIndicator" destination="cwF-ZS-luK" id="KFZ-s1-tds"/>
-                        <segue destination="mel-7B-Ngl" kind="show" identifier="showImageGallery" id="aR4-l7-uf5"/>
+                        <segue destination="mel-7B-Ngl" kind="presentation" identifier="showImageGallery" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="aR4-l7-uf5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hpv-pS-c74" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -50,7 +48,7 @@
         <!--Error View Controller-->
         <scene sceneID="eYd-x6-tBW">
             <objects>
-                <viewController storyboardIdentifier="ErrorViewController" id="Kc8-72-RnK" customClass="ErrorViewController" customModule="Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ErrorViewController" id="Kc8-72-RnK" customClass="ErrorViewController" customModule="ImageGallery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MjN-h4-bKf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -83,7 +81,9 @@
         <!--ImageGalleryNavigationViewController-->
         <scene sceneID="ETM-b5-VHU">
             <objects>
-                <viewControllerPlaceholder storyboardName="ImageGallery" referencedIdentifier="ImageGalleryNavigationViewController" id="mel-7B-Ngl" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="ImageGallery" referencedIdentifier="ImageGalleryNavigationViewController" id="mel-7B-Ngl" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Q7v-j3-5HD"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kb9-sO-1Tf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-74" y="398"/>
