@@ -30,7 +30,7 @@ struct ImageGalleryCellViewModel: ImageGalleryCellViewInputs, ImageGalleryCellVi
     init() {
         
         image = imageModelProperty.signal.skipNil()
-            .zip(with: imageProviderProperty.signal.skipNil())
+            .combineLatest(with: imageProviderProperty.signal.skipNil())
             .flatMap(.latest, { imageModel, imageProvider -> SignalProducer<ImageGalleryItem, FetchError> in
                 imageProvider.fetchImageGalleryItem(forUri: imageModel.uri, imageType: .thumbnail)
             })

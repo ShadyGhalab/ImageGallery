@@ -68,9 +68,6 @@ extension ImageProvider {
         let imageUrlBuilder = ImageURlBuilder(with: imageType)
         let urlString = imageUrlBuilder.buildValidUrl(forUri: uri)
         let url = URL(string: urlString)
-        print(url)
-        print(url?.path)
-        print(urlString)
 
         return fetchImage(forUrl: url)
             .map { ImageGalleryItem(image: $0.0, uri: $0.1) }
