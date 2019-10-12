@@ -17,7 +17,6 @@ struct ImagesFeed: Feed {
     
     func unwrapModel(_ jsonDecodingResult: UniversalItem) -> DataWrapper<ImageModel>? {
         return  DataWrapper(data: jsonDecodingResult.images)
-
     }
 }
 

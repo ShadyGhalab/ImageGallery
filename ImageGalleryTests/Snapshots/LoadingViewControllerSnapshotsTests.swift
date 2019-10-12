@@ -18,8 +18,6 @@ class LoadingViewControllerSnapshots: FBSnapshotTestCase {
     override func setUp() {
         super.setUp()
        
-        recordMode = false
-
         viewController = LoadingViewController.make()
     }
     

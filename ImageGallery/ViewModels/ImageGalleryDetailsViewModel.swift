@@ -39,7 +39,8 @@ struct ImageGalleryDetailsViewModel: ImageGalleryDetailsViewInputs, ImageGallery
             .map { $0.1 }
             .flatMap(.latest, { imageProvider, uri -> SignalProducer<ImageGalleryItem, FetchError> in
                  imageProvider.fetchImageGalleryItem(forUri: uri, imageType: .largeImage)
-            }).flatMapError { _ in SignalProducer(value: ImageGalleryItem(image: imagePlaceholder, uri: "Placeholder")) }
+            })
+            .flatMapError { _ in SignalProducer(value: ImageGalleryItem(image: imagePlaceholder, uri: "Placeholder")) }
             .map({ $0.image })
     }
     
