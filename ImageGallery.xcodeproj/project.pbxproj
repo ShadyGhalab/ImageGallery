@@ -68,7 +68,6 @@
 		D5755AB922E1CCD300E0EEA4 /* ImageGalleryViewControllerSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5755AB822E1CCD300E0EEA4 /* ImageGalleryViewControllerSnapshotsTests.swift */; };
 		D5755ABB22E1E5B600E0EEA4 /* ImageGalleryDetailsViewControllerSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5755ABA22E1E5B600E0EEA4 /* ImageGalleryDetailsViewControllerSnapshotsTests.swift */; };
 		D5755ABD22E1EB8E00E0EEA4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = D5755ABC22E1EB8E00E0EEA4 /* README.md */; };
-		D5755ABF22E1EC2F00E0EEA4 /* mobile.de-Assignmen.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D5755ABE22E1EC2F00E0EEA4 /* mobile.de-Assignmen.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,7 +167,6 @@
 		D5755AB822E1CCD300E0EEA4 /* ImageGalleryViewControllerSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryViewControllerSnapshotsTests.swift; sourceTree = "<group>"; };
 		D5755ABA22E1E5B600E0EEA4 /* ImageGalleryDetailsViewControllerSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryDetailsViewControllerSnapshotsTests.swift; sourceTree = "<group>"; };
 		D5755ABC22E1EB8E00E0EEA4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		D5755ABE22E1EC2F00E0EEA4 /* mobile.de-Assignmen.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "mobile.de-Assignmen.pdf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,7 +196,6 @@
 			isa = PBXGroup;
 			children = (
 				D5755ABC22E1EB8E00E0EEA4 /* README.md */,
-				D5755ABE22E1EC2F00E0EEA4 /* mobile.de-Assignmen.pdf */,
 				306E7CCC22DDEC3F005CFC38 /* ImageGallery */,
 				306E7CE122DDEC41005CFC38 /* ImageGalleryTests */,
 				306E7CCB22DDEC3F005CFC38 /* Products */,
@@ -540,7 +537,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5755ABD22E1EB8E00E0EEA4 /* README.md in Resources */,
-				D5755ABF22E1EC2F00E0EEA4 /* mobile.de-Assignmen.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
