@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "306E7CDD22DDEC41005CFC38"
+               BuildableName = "ImageGalleryTests.xctest"
+               BlueprintName = "ImageGalleryTests"
+               ReferencedContainer = "container:ImageGallery.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -50,6 +60,18 @@
             ReferencedContainer = "container:ImageGallery.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "IMAGE_DIFF_DIR"
+            value = "$(SOURCE_ROOT)/$(PROJECT_NAME)Tests/FailureDiffs"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "FB_REFERENCE_IMAGE_DIR"
+            value = "$(SOURCE_ROOT)/$(PROJECT_NAME)Tests/ReferenceImages"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
