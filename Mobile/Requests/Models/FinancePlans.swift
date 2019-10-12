@@ -14,7 +14,7 @@ struct FinancePlans: Codable {
     let fallback: Bool
     let url: String
     let bankLogoUri: String
-    let bankId: String
+    let bankId: String?
     let downPayment: Int
     let loanDuration: Int
     let netAmount: Int
