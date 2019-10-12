@@ -3,13 +3,13 @@
 //  MobileTests
 //
 //  Created by Shady Mustafa on 18.07.19.
-//  Copyright © 2019 Ebay. All rights reserved.
+//  Copyright © 2019 Babylon Health. All rights reserved.
 //
 
 import Foundation
 import ReactiveSwift
 
-@testable import Mobile
+@testable import ImageGallery
 
 class RequestManagerMock: CanRequestFeeds {
     
@@ -43,8 +43,17 @@ class RequestManagerMock: CanRequestFeeds {
 
 extension UniversalItem {
     static func make(images: [ImageModel]) -> UniversalItem {
-        
-        return UniversalItem(isOnStock: false, attributes: [], customDimensions: [:], mediaGallery: MediaGallery.make(), financeBudget: FinanceBudget.make(), htmlDescription: "", makeKey: "", modelKey: "", isNew: false, hasEnvkv: false, isFinancingFeature: false, isVideoEnabled: false, isConditionNew: false, contact: Contact.make(), created: 0.0, modified: 0.0, renewed: 0.0, version: 0, makeId: 0, modelId: 0, financePlans: [], links: [], images: images, features: [], sellerId: 0.0, segment: "", title: "", url: "", vat: "", vc: "", id: 0.0)
+        return UniversalItem(isPreRegistration: false, attributes: [],
+                             customDimensions: [:], mediaGallery: MediaGallery.make(),
+                             financeBudget: FinanceBudget.make(), htmlDescription: "",
+                             makeKey: "", modelKey: "", isNew: false, hasEnvkv: false,
+                             isFinancingFeature: false, isVideoEnabled: false,
+                             isConditionNew: false, contact: Contact.make(),
+                             created: 0.0, modified: 0.0, renewed: 0.0, version: 0,
+                             makeId: 0, modelId: 0, financePlans: [], links: [],
+                             images: images, features: [], sellerId: 0.0,
+                             priceRating: PriceRating.make(), stPrice: STPrice.make(), segment: "",
+                             title: "", url: "", vat: "", vc: "", id: 0.0)
     }
 }
 
@@ -108,5 +117,17 @@ fileprivate extension HeroImage {
 fileprivate extension Person {
     static func make() -> Person {
         return Person(name: "", logo: "", role: "")
+    }
+}
+
+fileprivate extension PriceRating {
+    static func make() -> PriceRating {
+        return PriceRating(rating: "", ratingLabel: "", thresholdLabels: [], vehiclePriceOffset: 10)
+    }
+}
+
+fileprivate extension STPrice {
+    static func make() -> STPrice {
+        return STPrice(grs: STPrice.STPriceGRS(amount: 100, currency: "Euro", localized: ""))
     }
 }
