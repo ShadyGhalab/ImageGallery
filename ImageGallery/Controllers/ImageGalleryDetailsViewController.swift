@@ -19,6 +19,7 @@ final class ImageGalleryDetailsViewController: UIViewController, StoryboardMakea
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.topItem?.title = " "
 
         bindViewModel()
        
