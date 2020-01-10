@@ -2,7 +2,7 @@
 
 Xcode Version 11.1 (11A1027)
 
-# Project - Coding Challenge  #
+# Project #
 
  Image gallery app that will access  API endpoint to fetch all available photos and show them to the user.
 
